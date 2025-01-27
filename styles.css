@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+:root {
+    --page-margin: 0rem;
+	--page-padding: 1rem;
+    --font-family-main: "Source Serif 4", serif;
+    --black: #000000;
+    --blue: #0000FF;
+    --yellow: #ffff00;
+    --white: #ffffff;
+
+    --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+    --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+    --fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+    --fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+    --fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+    --fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+    --fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+    --font-weight-semibold: 600;
+}
+
+body {
+    font-family: var(--font-family-main);
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    
+}
+
+h1, h2 {
+    font-size: var(--fs-xxl);
+}
+
+h3 {
+    font-size: var(--fs-xl);
+    display: flex;
+    gap: 0 0.6rem;
+    align-items: center;
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--fs-md);
+        background-color: var(--blue);
+        color: var(--white);
+        width: var(--fs-lg);
+        height: var(--fs-lg);
+        text-align: center;
+        border-radius: 50%;
+    }
+}
+
+h1, h2, #instructor, #address, h3, #overview .overview-item, #assignments img {
+    margin-bottom: 2rem;
+}
+
+a, h2, .overview-item h3, strong {
+    color: var(--blue)
+}
+
+img {
+    display: block;
+}
+
+#info p, #email {
+    line-height: 1.2;
+    font-size: var(--fs-md);
+    text-decoration: none;
+}
+
+#syllabus {
+    color: var(--black);
+}
+
+p, a, li {
+    font-size: var(--fs-base);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    a {
+        display: block;
+        text-decoration: none;
+        padding: 1rem 0.6rem;
+    }
+    li {
+        /* padding: 1rem 0.6rem; */
+        color: var(--blue);
+        cursor: pointer;
+        border: 1px solid var(--blue);
+        border-bottom: none;
+        /* a {
+            text-decoration: none;
+        } */
+    }
+    
+    li:not(:last-child) {
+        border-right: none;
+    }
+    .current-tab {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+    
+}
+
+#p5sketch, #assignments {
+    border: 1px solid var(--blue);
+}
+#p5sketch {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 16 / 6;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+    max-height: 10rem;
+    width: auto;
+    object-fit: contain;
+}
+
+section, footer, header {
+    padding: var(--page-padding) var(--page-padding);
+}
+
+#overview p, #assignments p {
+    margin-bottom: 1rem;
+    
+}
+
+#overview p:has( > b), #assignments p:has( > strong) {
+    margin: 2rem 0;
+    /* margin-bottom: 2rem; */
+}
+
+#overview ol {
+    list-style-type: decimal;
+    padding-left: 1.3rem;
+}
+
+#overview p, #overview li, footer p, ul li, ol li, #assignments p {
+    line-height: 1.5;
+}
+
+.overview-item p, .overview-item li, footer p {
+    max-width: 90%;
+}
+
+b {
+    font-weight: var(--font-weight-semibold);
+}
+
+footer p {
+    margin-top: 8rem;
+    max-width: 32rem;
+}
+
+#weeks, #assignments {
+    display: grid;
+}
+#weeks {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    border-top: 1px solid var(--blue);
+    border-left: 1px solid var(--blue);
+}
+/* weeks.html */
+#weeks details {
+    border-right: 1px solid var(--blue);
+    /* border-bottom: 1px solid var(--blue); */
+    position: relative;
+}
+#weeks summary {
+    /* border-bottom: 1px solid var(--blue); */
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    height: 15rem;
+    .week {
+        color: var(--blue);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        /* padding: 0 1rem; */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        /* padding: 0.5rem; */
+        z-index: 2;
+        p {
+            padding: 1rem;
+        }
+    }
+    img {
+        
+        display: block;
+        /* width: 100%; */
+        /* max-width: 90%; */
+        /* max-width: 15rem; */
+        /* width: 100%; */
+        /* height: 20rem; */
+        height: 100%;
+    }
+}
+#weeks summary:hover {
+    background-color: var(--blue);
+    .week {
+        color: var(--white)
+    }
+    
+}
+#weeks details > div {
+    /* padding: 1rem; */
+    .slides {
+        padding: 1rem;
+    }
+    color: var(--black);
+    background-color: var(--white);
+    width: 100%;
+    padding-bottom: 1rem;
+    z-index: 1;
+    ol {
+        padding-left: calc(1.3rem + 1rem);
+        > li {
+            list-style-type: upper-alpha;
+            margin-top: 1rem;
+        }
+    }
+
+    ul {
+        padding-left: 0.5rem;
+        list-style-type: disc;
+        > li::marker {
+            font-size: var(--fs-sm);
+        }
+    }
+    /* ol > li {
+        list-style-type: lower-alpha;
+    } */
+}
+
+/* #weeks details[open] > div {
+    position: absolute;
+} */
+
+/* assignments.html */
+#assignments > div {
+    padding: 1rem;
+    img {
+        width: 50%;
+        max-width: 11rem;
+        justify-self: center;
+    }
+}
+#assignments h3 {
+    line-height: 1.2;
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+    /* #weeks details[open] > div {
+        position: absolute;
+    } */
+}
+@media (min-width: 26rem) {
+    canvas {
+        max-height: 17rem;
+    }
+}
+
+
+@media (min-width: 52rem) {
+    #info, #overview {
+        /* grid-template-columns: repeat(2, 1fr); */
+        grid-template-columns: repeat(2, minmax(0, 1fr));;
+        display: grid;
+        gap: 0 2rem;
+    }
+    #info {
+        h2 {
+            grid-area: num;
+        }
+        h1 {
+            grid-area: course;
+        }
+        #instructor {
+            grid-area: instructor;
+        }
+        #time {
+            grid-area: time;
+        }
+        grid-template-areas: "num instructor"
+                             "course time"; 
+                    
+    }
+    #info p, #email {
+        font-size: var(--fs-lg);
+    }
+
+    canvas {
+        max-height: none;
+    }
+
+    #overview {
+        grid-template-areas: "description outline"
+                             "outcomes outline"
+                             ". outline";
+    }
+    .description {
+        grid-area: description;
+    }
+    .outline {
+        grid-area: outline;
+    }
+    .outcomes {
+        grid-area: outcomes;
+    }
+    
+    #assignments {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    
+}
+
+@media (min-width: 90rem) {
+    canvas {
+        max-height: none;
+    }
+}
