@@ -237,6 +237,7 @@ footer p {
         > li {
             list-style-type: upper-alpha;
             margin-top: 1rem;
+            padding-right: 1rem;
         }
     }
 
