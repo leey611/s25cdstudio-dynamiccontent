@@ -181,7 +181,7 @@ footer p {
     position: relative;
 }
 #weeks summary {
-    /* border-bottom: 1px solid var(--blue); */
+    border-bottom: 1px solid var(--blue);
     padding: 4rem;
     display: flex;
     justify-content: center;
